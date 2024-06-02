@@ -1,42 +1,59 @@
 import React from "react";
-import { Box, Typography, Card, CardContent, Grid } from "@mui/material";
-import TextSwap from "../components/TextSwap";
-import Texts from "../assets/static/Texts";
+import { Box, Typography, Button } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
+import HeroArt from "../components/HeroArt";
 
 const HomePage = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 720px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <>
-      <Box sx={{ height: "90vh", display: "flex" }}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        >
-          <Box sx={{ display: "flex", flexDirection: "column", p: 2 }}>
-            <Typography
-              variant={isMobile ? "h3" : "h1"}
-              color={"primary"}
-              sx={{ my: 3 }}
-            >
-              Hi, I'm Ryan. Specializing in <TextSwap texts={Texts} />, I am
-              committed to delivering high-quality software solutions.
-            </Typography>
-            <Typography
-              variant="body1"
-              color={"primary.text"}
-              sx={{ maxWidth: "600px" }}
-            >
-              As a dedicated Software Engineer, I specialize in designing and
-              supporting innovative software solutions. I lead web development
-              projects and manage CI/CD pipelines, always striving to enhance
-              user experience and operational efficiency.
-            </Typography>
+      <Box
+        sx={{
+          padding: "1rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          flexDirection: `${isMobile ? "column" : "row"}`,
+          gap: 2,
+          mb: "100px",
+        }}
+      >
+        {isMobile && (
+          <Box sx={{ maxHeight: "500px", width: "500px" }}>
+            <HeroArt style={{ height: "100%", width: "100%" }} />
           </Box>
-        </motion.div>
+        )}
+        <Box>
+          <Typography
+            variant="h3"
+            sx={{ lineHeight: "95%", my: "10px", fontWeight: "bold" }}
+          >
+            Hi, I'm Ryan
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ maxWidth: "500px", marginBottom: "10px" }}
+          >
+            As a dedicated Software Engineer, I specialize in designing and
+            supporting innovative software solutions.
+          </Typography>
+          <Box sx={{ display: "flex", gap: 2, padding: 0 }}>
+            <Button variant="outlined" color="primary" href="#about">
+              How does it work?
+            </Button>
+
+            <Button variant="contained" color="primary" href="/campaigns">
+              Get Started
+            </Button>
+          </Box>
+        </Box>
+        {!isMobile && (
+          <Box sx={{ maxHeight: "500px", width: "500px" }}>
+            <HeroArt style={{ height: "100%", width: "100%" }} />
+          </Box>
+        )}
       </Box>
     </>
   );

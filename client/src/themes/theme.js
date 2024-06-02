@@ -2,9 +2,12 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
+    text: {
+      main: "#dcdcef",
+      secondary: "#b3b3b3",
+    },
     primary: {
-      text: "#dcdcef",
-      main: "#9595e6",
+      main: "#dcdcef",
     },
     secondary: {
       main: "#3f51b5",
@@ -18,9 +21,11 @@ const theme = createTheme({
       letterSpacing: "1px",
     },
     h3: {
-      fontSize: "1.2rem",
       lineHeight: "1.2",
       letterSpacing: "1px",
+    },
+    body1: {
+      color: "#b3b3b3",
     },
   },
 

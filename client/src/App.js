@@ -3,6 +3,7 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "./themes/theme";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Container } from "@mui/material";
+
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Container maxWidth="xl" disableGutters >
+        <Container sx={{ overflowX: "hidden" }}>
           <Router>
             <Navbar />
             <Routes>

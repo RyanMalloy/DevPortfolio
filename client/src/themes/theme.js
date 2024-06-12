@@ -5,6 +5,7 @@ const theme = createTheme({
     text: {
       main: "#dcdcef",
       secondary: "#b3b3b3",
+      white: "#ffffff",
     },
     primary: {
       main: "#dcdcef",
@@ -31,9 +32,26 @@ const theme = createTheme({
 
   components: {
     MuiButton: {
+      variants: [
+        {
+          props: { variant: "contained" },
+          style: {
+            textTransform: "none",
+            backgroundColor: "white",
+            color: "black",
+          },
+        },
+        {
+          props: { variant: "outlined" },
+          style: {
+            color: "white",
+          },
+        },
+      ],
       styleOverrides: {
         root: {
           textTransform: "none",
+          color: "white",
         },
       },
     },

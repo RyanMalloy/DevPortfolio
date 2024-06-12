@@ -1,14 +1,110 @@
 :root {
-  --color-text: #dcdcef;
+  --color-text: #ffffff;
   --color-text-secondary: #b3b3b3;
-  --color-background: #282828;
-  --color-primary: #9595e6;
-  --color-secondary: #131386;
-  --color-accent: #ffc107;
+  --color-background: #121212;
+  --color-accent: #b1e8c5;
+}
+
+html {
+  scrollbar-width:none;
+  scrollbar-color: var(--color-accent) var(--color-background);
+  scroll-behavior: smooth;
 }
 
 body {
   padding: 0;
   margin: 0;
   background-color: var(--color-background);
+  cursor: url("../images/cursor.png"), auto;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#spline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  align-items: center;
+}
+
+#hero-about {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  align-items: center;
+}
+
+#skill-cards {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#skill-card {
+  width: 400px;
+  height: 250px;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid rgba(64, 64, 64, 1);
+  background-color: rgba(64, 64, 64, 0.1);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#skill-card-logos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 8px;
 }

@@ -1,60 +1,42 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Box, Typography, Button } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
-import { motion } from "framer-motion";
-import HeroArt from "../components/HeroArt";
+import SplineArt from "../components/Art/SplineArt";
+import SportsMartialArtsIcon from "@mui/icons-material/SportsMartialArts";
+import CodeIcon from "@mui/icons-material/Code";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <>
-      <Box
-        sx={{
-          padding: "1rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-around",
-          flexDirection: `${isMobile ? "column" : "row"}`,
-          gap: 2,
-          mb: "100px",
-        }}
-      >
-        {isMobile && (
-          <Box sx={{ maxHeight: "500px", width: "500px" }}>
-            <HeroArt style={{ height: "100%", width: "100%" }} />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 5 }}>
+        <Box id="hero-container">
+          <Box id="spline">
+            <SplineArt />
           </Box>
-        )}
-        <Box>
-          <Typography
-            variant="h3"
-            sx={{ lineHeight: "95%", my: "10px", fontWeight: "bold" }}
-          >
-            Hi, I'm Ryan
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ maxWidth: "500px", marginBottom: "10px" }}
-          >
-            As a dedicated Software Engineer, I specialize in designing and
-            supporting innovative software solutions.
-          </Typography>
-          <Box sx={{ display: "flex", gap: 2, padding: 0 }}>
-            <Button variant="outlined" color="primary" href="#about">
-              How does it work?
-            </Button>
 
-            <Button variant="contained" color="primary" href="/campaigns">
-              Get Started
-            </Button>
+          <Box id="hero">
+            <Typography variant={isMobile ? "h4" : "h3"} color={"white"} sx={{ lineHeight: "95%", my: "10px", fontWeight: "bold" }}>
+              Hi, I'm Ryan
+            </Typography>
+            <Typography variant={isMobile ? "body2" : "body1"} color={"white"} sx={{ maxWidth: "500px", minWidth: "375px", marginBottom: "10px" }}>
+              I'm a Full-Stack Software Engineer, and I specialize in designing and creating innovative software solutions.
+            </Typography>
+            <Box sx={{ display: "flex", gap: 2, padding: 0, alignItems: "center", justifyContent: "center" }}>
+              <Button variant="contained" component={Link} to="/about" startIcon={<SportsMartialArtsIcon />}>
+                About Me
+              </Button>
+
+              <Button variant="contained" component={Link} to="/projects" startIcon={<CodeIcon />}>
+                Projects
+              </Button>
+            </Box>
           </Box>
         </Box>
-        {!isMobile && (
-          <Box sx={{ maxHeight: "500px", width: "500px" }}>
-            <HeroArt style={{ height: "100%", width: "100%" }} />
-          </Box>
-        )}
-      </Box>
+      </motion.div>
     </>
   );
 };

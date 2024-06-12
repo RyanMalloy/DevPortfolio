@@ -42,7 +42,7 @@ const ProjectData = {
     subTitle: "My Portfolio Website",
     logos: [ReactLogo, MUILogo, AzureLogo],
     content: "Designed and developed my portfolio website using React for the frontend, Material-UI for styling, and Azure for deployment.",
-    link: "https://www.ryan-malloy.com/",
+    link: "https://github.com/RyanMalloy/DevPortfolio",
   },
 };
 

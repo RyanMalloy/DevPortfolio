@@ -12,6 +12,8 @@ import CSharpLogo from "../../assets/images/logos/CSharpLogo.js";
 import JavaLogo from "../../assets/images/logos/JavaLogo.js";
 import FirebaseLogo from "../../assets/images/logos/FirebaseLogo.js";
 import AzureLogo from "../../assets/images/logos/AzureLogo.js";
+import GitHubLogo from "../images/logos/GitHubLogo.js";
+import TypeScriptLogo from "../../assets/images/logos/TypeScriptLogo.js";
 
 const SkillData = {
   skillWebDev: {
@@ -29,7 +31,7 @@ const SkillData = {
   skillFullStack: {
     title: "Full Stack Development",
     subTitle: "React / Node.js",
-    logos: [ReactLogo, NodeLogo],
+    logos: [TypeScriptLogo ,ReactLogo, NodeLogo],
     content: "Skilled in full stack development using React for frontend and Node.js for backend, ensuring efficient and scalable web applications.",
   },
   skillMobileDev: {
@@ -53,7 +55,7 @@ const SkillData = {
   skillCloud: {
     title: "Cloud Services",
     subTitle: "Azure / CI/CD",
-    logos: [AzureLogo],
+    logos: [AzureLogo, GitHubLogo],
     content: "Skilled in managing CI/CD pipelines and deploying applications using Azure, ensuring efficient and reliable deployment processes.",
   },
   skillProgrammingLanguages: {

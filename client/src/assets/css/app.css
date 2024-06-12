@@ -6,7 +6,7 @@
 }
 
 html {
-  scrollbar-width:none;
+  scrollbar-width: none;
   scrollbar-color: var(--color-accent) var(--color-background);
   scroll-behavior: smooth;
 }
@@ -41,16 +41,7 @@ body {
   justify-content: center;
 }
 
-#projects {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 
 #spline {
   position: absolute;
@@ -107,4 +98,58 @@ body {
   align-items: center;
   gap: 1rem;
   margin-bottom: 8px;
+}
+
+#projects {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+#project-cards {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+@media (max-width: 600px) {
+    #project-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+#project-card {
+  background-color: rgba(64, 64, 64, 0.1);
+  border: 1px solid rgba(64, 64, 64, 1);
+  border-radius: 1rem;
+  height: 450px;
+  position: relative;
+}
+
+#project-subtitle {
+  position: absolute;
+  top: 105px;
+  left: 20px;
+}
+
+#project-banner {
+  position: relative;
+}
+
+#project-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
 }
